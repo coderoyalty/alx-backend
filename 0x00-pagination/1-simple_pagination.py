@@ -37,4 +37,16 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-        pass
+        """
+        implement pagination on a dataset, and return a page of data.
+        """
+        assert type(page) is int and page > 0
+        assert type(page_size) is int and page > 0
+        data = []
+        start, end = index_range(page, page_size)
+        self.dataset()
+        try:
+            data = self.__dataset[start:end]
+        except Exception:
+            pass
+        return data
