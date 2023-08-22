@@ -22,7 +22,7 @@ class LIFOCache(BaseCaching):
         as its index
         """
         if not key or not item:
-            pass
+            return
         keys = self.cache_data.keys()
         if len(self.cache_data) == self.MAX_ITEMS and key not in keys:
             keys = self.cache_data.keys()
