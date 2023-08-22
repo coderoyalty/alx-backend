@@ -6,6 +6,10 @@ BaseCaching = __import__('0-basic_cache').BaseCaching
 
 
 class BasicCache(BaseCaching):
+    """
+    Basic Cache Implementation
+    """
+
     def __init__(self, *args, **kwargs):
         """
         initialize
