@@ -19,7 +19,8 @@ class FIFOCache(BaseCaching):
         """
         if not key or not item:
             pass
-        if len(self.cache_data) == self.MAX_ITEMS:
+        keys = self.cache_data.keys()
+        if len(self.cache_data) == self.MAX_ITEMS and key not in keys:
             """
             :( what was i thinking here
             could have just done!
@@ -30,7 +31,7 @@ class FIFOCache(BaseCaching):
             """
             keys_iter = iter(self.cache_data.keys())
             first_item = next(keys_iter)
-            del self.cache_data[first_item]
+            self.cache_data.pop(first_item)
             print(f"DISCARD {first_item}")
         self.cache_data[key] = item
 
