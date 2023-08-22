@@ -20,6 +20,14 @@ class FIFOCache(BaseCaching):
         if not key or not item:
             pass
         if len(self.cache_data) == self.MAX_ITEMS:
+            """
+            :( what was i thinking here
+            could have just done!
+            keys = list(self.cache_data.keys())
+            first_item = keys[0]
+
+            (in kabmy lame's expression)
+            """
             keys_iter = iter(self.cache_data.keys())
             first_item = next(keys_iter)
             del self.cache_data[first_item]
