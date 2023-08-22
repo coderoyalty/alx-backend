@@ -29,7 +29,7 @@ class LIFOCache(BaseCaching):
             keys = list(keys)
             rm_key = keys[-1]
             self.cache_data.pop(rm_key)
-            print(f"DISCARD {rm_key}")
+            print(f"DISCARD: {rm_key}")
         self.cache_data[key] = item
 
     def get(self, key):
