@@ -36,7 +36,7 @@ class FIFOCache(BaseCaching):
             keys_iter = iter(self.cache_data.keys())
             first_item = next(keys_iter)
             self.cache_data.pop(first_item)
-            print(f"DISCARD {first_item}")
+            print(f"DISCARD: {first_item}")
         self.cache_data[key] = item
 
     def get(self, key):
